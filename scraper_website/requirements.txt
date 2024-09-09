@@ -1,0 +1,10 @@
+Django
+et-xmlfile
+jdcal
+openpyxl
+pytz
+BeautifulSoup4
+requests
+selenium
+chromedriver_autoinstaller
+pandas

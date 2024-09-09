@@ -1,0 +1,28 @@
+<html xmlns:scraper="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <form action="{% url "scraper:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text"
+                   title="write 1) imdb 2)naukri"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+        <hr>
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>
