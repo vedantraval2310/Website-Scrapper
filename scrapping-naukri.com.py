@@ -1,13 +1,14 @@
-import time
 import csv
+import chromedriver_autoinstaller
+
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-s=Service('C:\\Selenium\\chromedriver.exe')
-driver = webdriver.Chrome(service=s)
+chromedriver_autoinstaller.install()
+driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 20)
 driver.get("https://www.naukri.com/full-stack-developer-jobs?src=popular_roles_homepage_srch")
 
